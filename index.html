@@ -40,7 +40,7 @@ h1 {
 .card {
     padding: 10px 25px 10px 25px;
     border-radius: 10px;
-    background: #553c4e;
+    background: #000;
     width: 85vw;
     color: #9F4EEC;
     display: inline-block;
@@ -114,8 +114,8 @@ function date() {
     var year = today.getFullYear();
     var month = zeros(today.getMonth() + 1);  // JavaScript 的月份從 0 開始
     var day = zeros(today.getDate());
-    var weekday = ["日", "一", "二", "三", "四", "五", "六"][today.getDay()];
-    document.getElementById('date').innerHTML = year + "/" + month + "/" + day + " (" + weekday + ")";
+    var weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"][today.getDay()];
+    document.getElementById('date').innerHTML = year + "/" + month + "/" + day + weekday ;
 }
 
 
