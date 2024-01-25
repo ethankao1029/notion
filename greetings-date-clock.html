@@ -115,7 +115,7 @@ function date() {
     var month = zeros(today.getMonth() + 1);  // JavaScript 的月份從 0 開始
     var day = zeros(today.getDate());
     var weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"][today.getDay()];
-    document.getElementById('date').innerHTML = year + "/" + month + "/" + day + weekday ;
+    document.getElementById('date').innerHTML = year + "/" + month + "/" + day + " " + weekday ;
 }
 
 
