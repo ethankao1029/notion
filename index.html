@@ -40,9 +40,9 @@ h1 {
 .card {
     padding: 10px 25px 10px 25px;
     border-radius: 10px;
-    background: #553c4e;
+    background: #9F4EEC;
     width: 85vw;
-    color: #fff;
+    color: #553c4e;
     display: inline-block;
     box-shadow: 2px 2px 1px 0px #330835;
 }
@@ -81,7 +81,8 @@ h1 {
     display:inline;
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
-     padding-right: 30px;
+    padding-right: 30px;
+    color: #B71524;
 }
 
     </style>
@@ -108,9 +109,13 @@ h1 {
 </div>
 
 <script>
-    function date() {
-var today = new Date();
-document.getElementById('date').innerHTML = today.toDateString();
+function date() {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = zeros(today.getMonth() + 1);  // JavaScript 的月份從 0 開始
+    var day = zeros(today.getDate());
+    var weekday = ["日", "一", "二", "三", "四", "五", "六"][today.getDay()];
+    document.getElementById('date').innerHTML = year + "/" + month + "/" + day + " (" + weekday + ")";
 }
 
 
@@ -129,9 +134,9 @@ hrs = today.getHours();
 if (hrs < 12)
         greet = '很閒嘛～上班如此悠哉！';
     else if (hrs >= 12 && hrs <= 18)
-        greet = '都下午了，還在偷閒啊？';
+        greet = '都下午了～還在偷閒啊？';
     else if (hrs >= 18 && hrs <= 24)
-        greet = '既然下班了，就趕緊運動';
+        greet = '下班都多久了～還在廢啊？還不趕緊去運動！';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
