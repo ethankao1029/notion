@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>to-do list</title>
+
+<style>
+    /*CSS RESETS*/
+  body{
+      background-color: #191919;
+      color: Red;
+  }
+
+  #input{
+      background-color: #3C3C3C; /* 設定背景顏色 */
+      color: Red; /* 設定文字顏色 */
+  }
+</style>
+</head>
+
+<body>
+  <input id="input">
+  <button id="addButton">新增</button>
+  <button id="deleteButton">刪除</button>
+  <ul id="ul">
+    <li>運動 30 分鐘</li>
+    <li>閱讀 10 頁</li>
+  </ul>
+  <script>
+    var input = document.getElementById('input');
+    var addButton = document.getElementById('addButton');
+    var deleteButton = document.getElementById('deleteButton');
+    var ul = document.getElementById('ul');
+
+    addButton.onclick = function() {
+      ul.innerHTML += "<li>" + input.value + "</li>";
+      input.value = ""; // 點擊新增後，清空輸入框裡的文字
+    }
+
+    ul.onclick = function(e) {
+      if (e.target.style.textDecoration !== "line-through") {
+        e.target.style.textDecoration = "line-through"; // 點一下，該項目顯示刪除線
+      } else {
+        e.target.style.textDecoration = "none"; // 點一下，取消刪除線
+      }
+    }
+
+    deleteButton.onclick = function() {
+      var index = input.value;
+      if (index >= 1 && index <= ul.children.length) {
+        ul.removeChild(ul.children[index - 1]); // 刪除對應項目的 list
+      }
+      input.value = "";
+    }
+  </script>
+</body>
+</html>
